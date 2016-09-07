@@ -128,10 +128,14 @@ Answer: SQL commands are not case sensitive, however it is easier to identify co
 Answer: DQL stands for data query language. It is a sublanguage of SQL and it has only one command. 
 
 4. True or False:  Is it necessary to use the `FROM` clause with the select statement? 
-
+Answer: True. The SELECT command is always associated with the FROM clause.
 
 5. True or False:  Is it necessary to use a `WHERE` clause?  If not, when and why would you use a `WHERE` clause?
+Answer: False. The WHERE command is a conditional command that limits or filters the output data returned by the query. 
+
 6. What is the purpose of the `ORDER BY` clause?  What is its default value?  
+Answer: The ORDER BY clause arranges output records in ascending or descending order. The default order is ascending. 
+
 7. Is the data in the products table case sensitive?  Should it be case sensitive/insensitive? 
 8. Select all product names.
 9. List the MSRP for all products in ascending order.
