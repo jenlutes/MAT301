@@ -170,9 +170,10 @@ Answer: SELECT count(*) FROM unemath_Lutes.Products WHERE price<10 and msrp>20;
 Answer: SELECT count(*) FROM unemath_Lutes.Products WHERE price<10 and msrp<20;
 
 18. Which products cost less than $10 and sell for more than $20?
-Answer: SELECT name FROM unemath_Lutes.Products WHERE price<10 and price>20;
+Answer: SELECT name FROM unemath_Lutes.Products WHERE price<10 and msrp>20;
 
 19. Count all product's that have shipping weight less than 1 pound or greater than 20 pounds.
 Answer: SELECT count(*) FROM unemath_Lutes.Products WHERE 
 
 20. Create your own query.
+Answer:
