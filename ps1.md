@@ -121,59 +121,79 @@ FROM database.table;
 1. What does SQL stand for?  How is it pronounced?
 Answer: SQL stands for Structured Query Language. It can be pronounced “es que el” or as the word, sequel.
 
+
 2. Are SQL commands case-sensitive?  How can you determine? 
 Answer: SQL commands are not case sensitive, however it is easier to identify commands and tables by using caps. When commands are typed into a query, the code is not case sensitive which allows the code to run. 
+
 
 3. What does DQL stand for?
 Answer: DQL stands for data query language. It is a sublanguage of SQL and it has only one command. 
 
+
 4. True or False:  Is it necessary to use the `FROM` clause with the select statement? 
 Answer: True. The SELECT command is always associated with the FROM clause.
+
 
 5. True or False:  Is it necessary to use a `WHERE` clause?  If not, when and why would you use a `WHERE` clause?
 Answer: False. The WHERE command is a conditional command that limits or filters the output data returned by the query. 
 
+
 6. What is the purpose of the `ORDER BY` clause?  What is its default value?  
 Answer: The ORDER BY clause arranges output records in ascending or descending order. The default order is ascending. 
+
 
 7. Is the data in the products table case sensitive?  Should it be case sensitive/insensitive? 
 Answer: The data in the products table is case sensitive because objects requested need to match objects in table.  
 
+
 8. Select all product names.
 Answer: SELECT name FROM unemath_Lutes.Products;
+
 
 9. List the MSRP for all products in ascending order.
 Answer: SELECT  * FROM unemath_Lutes.Products ORDER BY msrp;
 
+
 10. Find all products within  category 430.  What is category 430?
 Answer: SELECT * FROM unemath_Lutes. Products WHERE category_id = 430; Category 430 is the identification number of wine glass products. 
+
 
 11. Find all product id and names in category 430 manufactured by 428.
 Answer: SELECT product_id, name FROM unemath_Lutes.Products WHERE category_id=430 and manufacturer_id=428; 
 
+
 12. How many products in category 430 manufactured by 428?
 Answer: SELECT count(product_id) FROM unemath_Lutes.Products WHERE  category_id=430 and manufacturer_id=428; 
+
 
 13. How many countries make products contained in the store?
 Answer:SELECT count(distinct(country)) FROM unemath_Lutes.Products;
 
+
 14. How many products are manufactured in the USA?
 Answer: SELECT count(*) FROM unemath_Lutes.Products WHERE country='USA';
+
 
 15. How many products cost the company less than $10?
 Answer: SELECT count(*) FROM unemath_Lutes.Products WHERE price<10;
 
+
 16. How many products cost the company less than $10 and sell for more than $20?
 Answer: SELECT count(*) FROM unemath_Lutes.Products WHERE price<10 and msrp>20;
+
 
 17. How many products cost the company less than $10 and sell for less than $20?
 Answer: SELECT count(*) FROM unemath_Lutes.Products WHERE price<10 and msrp<20;
 
+
 18. Which products cost less than $10 and sell for more than $20?
 Answer: SELECT name FROM unemath_Lutes.Products WHERE price<10 and msrp>20;
 
+
 19. Count all product's that have shipping weight less than 1 pound or greater than 20 pounds.
-Answer: SELECT count(*) FROM unemath_Lutes.Products WHERE 
+Answer: SELECT count(*) FROM unemath_Lutes.Products WHERE ship_weight<1 or ship_weight>20;
+
 
 20. Create your own query.
-Answer:
+Answer: SELECT product_id FROM unemath_Lutes.Product WHERE inventory>=10; 
+
