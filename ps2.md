@@ -157,7 +157,7 @@ SELECT 1.35*price AS `Sale Price` FROM Products;
 
 ===
 
-# 1. Select all products (UPC) made in China whose price is less than $50.
+### 1. Select all products (UPC) made in China whose price is less than $50.
 Answer:SELECT upc FROM unemath_Lutes.Products WHERE price<50 and country='China'; 
 
 ### 2. Find products with "bird bath" in the description.
