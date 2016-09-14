@@ -161,22 +161,28 @@ SELECT 1.35*price AS `Sale Price` FROM Products;
 Answer:SELECT upc FROM unemath_Lutes.Products WHERE price<50 and country='China'; 
 
 2. Find products with "bird bath" in the description.
-Answer: 
+Answer: SELECT * FROM unemath_Lutes.Products WHERE description like'%bird% %bath%'; 
 
 3. Find products whose cost is between $10 and $100.
+Answer: SELECT * FROM unemath_Lutes.Products WHERE price>=10 and price<=100; 
 
 4. Find products whose cost is less than or equal to $59.99.
+Answer: SELECT * FROM unemath_Lutes.Products WHERE price<=59.99; 
 
 5. Find products whose ID is between 5000 and 6000 or 7483, 4939, 3452, 9848, 11293, 12001.
+Answer: SELECT * FROM unemath_Lutes.Products WHERE product_id between 5000 and 6000 and product_id IN (7483, 4939, 3452, 9848, 11293, 12001); 
 
 6. Find products that are not between 5000 and 6000 or 7483, 4939, 3452, 9848, 11293, 12001.
+Answer: SELECT * FROM unemath_Lutes.Products WHERE product_id not between 5000 and 6000 and product_id not IN (7483, 4939, 3452, 9848, 11293, 12001); 
 
 7. Find products whose country code is NULL.
+Answer: SELECT * FROM unemath_Lutes.Products WHERE country='';
 
 8. Calculuate the shipping volume and report it as 'Volume'.
 Answer: SELECT round(ship_depth*ship_length*ship_width) AS Volume FROM unemath_Lutes.Products;
 
 9. Suppose you want to have a 35% markup on all products and sales tax is 7.5%.  Determine the 'Sales Price' of each product.
+Answer: SELECT round(1.075*1.35*price,2) AS sales_price FROM unemath_Lutes.Products;
 
 10. True or False: Both conditions when using the OR operator must be true.
 
