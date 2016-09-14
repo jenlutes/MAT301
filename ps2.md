@@ -157,7 +157,7 @@ SELECT 1.35*price AS `Sale Price` FROM Products;
 
 ===
 
-### 1. Select all products (UPC) made in China whose price is less than $50.
+# 1. Select all products (UPC) made in China whose price is less than $50.
 Answer:SELECT upc FROM unemath_Lutes.Products WHERE price<50 and country='China'; 
 
 ### 2. Find products with "bird bath" in the description.
@@ -194,10 +194,11 @@ Answer: The IN operator assists things in a list. The opposite is not IN where t
 Answer: The following statment says select all from products where the price is between 10, 100. There is no and conjunction that connect the between command. It should be SELECT * FROM Products WHERE price BETWEEN 10 and 100; 
 
 ### 13. Select products with length less than 12 inches and sort decsending.
-Answer: SELECT * FROM unemath_Lutes.Products ORDER BY length descending WHERE length<12 
+Answer: SELECT * FROM unemath_Lutes.Products WHERE length<12 Order by length DESC;
 
 ### 14. How many products are there whose price is between $10 and $20?
+Answer: SELECT count(*) FROM unemath_Lutes.Products WHERE price between 10 and 20;
 
 ### 15. How many products are there made in China whose MSRP is between $10 and $20.
-
+Answer: SELECT count(*) FROM unemath_Lutes.Products WHERE country='China' and msrp between 10 and 20; 
 
