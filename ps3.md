@@ -4,13 +4,13 @@
 Answer: Relation is a set of tables connecting to each other that exist in prexisting categories. Relation=Table. Tuple, or record is one set of data in relation. Tuple=record=row. Attributes, or field are specific database characteristics. Attribute=field=column.  
 
 ####2. What are keys in a relation?
-Answer: 
+Answer: Keys in a relation uniquely identify attributes or fields in a table. Examples of keys are: candidate, primary, foreign, natural, surrogate, and composite. 
 
 ####3. What is a surrogate key and how is it used?
-Answer: 
+Answer: A surrogate key is used to identify an item independent from other attributes. It is used to identify a single attribute, which is the best choice for a primary key. 
 
 ####4. In the following equation, Area = Length x Width, identify the determinant(s).
-Answer: 
+Answer: Determinants are used to identify another attribute in the relation. The determinants are length and width. When they are multiplied together, they determine area. 
 
 ####5. If a relation has no duplicate data, how can you be sure there is always at least one primary key?
 Answer: 
