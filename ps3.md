@@ -13,10 +13,10 @@ Answer: A surrogate key is used to identify an item independent from other attri
 Answer: Determinants are used to identify another attribute in the relation. The determinants are length and width. When they are multiplied together, they determine area. 
 
 ####5. If a relation has no duplicate data, how can you be sure there is always at least one primary key?
-Answer: 
+Answer: Primary keys are unique identifiers. There can be many composite keys to uniquely identify a single occurence. In order to make sure there is only one primary key, search through all the attributes to make sure only unqiue rows are delivered. 
 
 ####6. Give an example of a relation.  Determine a natural key for this relation.
-Answer: 
+Answer: An example of a relation is a clothing store inventory table with many field such as upc, product_id, department_id inventory, ect. Natural keys are universal identifiers that exist across the business world. The natural key in this table would be upc, a standard code for each product. The product_id could be considered a primary key to uniquely identify all products. 
 
   For question 7 - 8, Consider product *orders*.  In particular, associated with an order is: customer name (first and last), address (street, city, state, zip), phone, email, the products orders (including item, quantity, and price).  
 
@@ -24,7 +24,7 @@ Answer:
 Answer: 
 
 ####8. For customer, could email be used as a primary key?  If so, state why.  Also, if possible to use as a primary key, discuss any disadvantages of using email as a primary key.
-Answer: 
+Answer: Since emails cannot be the exact same for different individuals, email could uniquely identify customers as a primary key. However, email should not be used as a primary key, rather it should be used as a reference or composite key. The disadvantages of using email as a primary identifiers are email strings can be very similar and mistyped often, security on email servers are not always secure, and people can make many emails. It would be best to use customer's addresses or phone numbers because there is less room for mistakes. 
 
 ####9. Given two relations S and R below find the Cartsian Product S x R. 
 Answer: 
