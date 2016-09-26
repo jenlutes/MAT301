@@ -24,7 +24,7 @@ Answer: An example of a relation is a clothing store inventory table with many f
 Answer: 
 1NF:
 ----------
-|customer_id|first_name|last_name|zipcode|state|city|street|house_number|phone|email|order_id|items|quantity|price|
+| customer_id | first_name | last_name | zipcode | state | city | street | house_number | phone | email | order_id | items | quantity | price |
 ----------
 
 ####8. For customer, could email be used as a primary key?  If so, state why.  Also, if possible to use as a primary key, discuss any disadvantages of using email as a primary key.
