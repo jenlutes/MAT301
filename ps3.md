@@ -101,7 +101,7 @@ RxS
 
 ---------
 ####10. Find the natural join between the Faculty and Department relations below.
-Answer: 
+Answer:  The natural join, or common column between Faculty and Department Tables is Dept attribute. 
 
 S
 --------------
