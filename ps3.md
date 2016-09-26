@@ -27,6 +27,7 @@ Answer:
 
 ----
 | customer_id | first_name | last_name | zipcode | state | city | street | house_number | phone | email | order_id | items | quantity | price |
+|----|
 
 2NF: 
 
