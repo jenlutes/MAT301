@@ -90,7 +90,7 @@ Answer: Since emails cannot be the exact same for different individuals, email c
 Answer: 
 
 --------------
-|.|.|.|.|.|.|
+
 |---|---|---|---|---|
 | 1 | 2 | 3 | 1 | 1 |
 | 1 | 2 | 2 | 2 | 3 |
