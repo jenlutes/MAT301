@@ -24,7 +24,7 @@ Answer: An example of a relation is a clothing store inventory table with many f
 Answer: 
 
 1NF:
-----------
+----
 | customer_id | first_name | last_name | zipcode | state | city | street | house_number | phone | email | order_id | items | quantity | price |
 
 
