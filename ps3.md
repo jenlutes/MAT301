@@ -55,7 +55,32 @@ Answer:
 3NF: 
 
 -----------
+| customer_id |
+|-------|
+| customer_info|
+| zipcode |
+| order_id |
 
+| customer_info |
+|-------|
+| first_name |
+| last_name |
+| phone |
+| email |
+| zipcode |
+
+| zipcode |
+|-------|
+| state |
+| city |
+| street |
+| house_number |
+
+| order_id|
+|-------|
+| item |
+| quantity |
+| price |
 
 
 ####8. For customer, could email be used as a primary key?  If so, state why.  Also, if possible to use as a primary key, discuss any disadvantages of using email as a primary key.
