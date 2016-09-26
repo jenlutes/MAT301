@@ -24,7 +24,7 @@ Answer: An example of a relation is a clothing store inventory table with many f
 Answer: 
 
 ####8. For customer, could email be used as a primary key?  If so, state why.  Also, if possible to use as a primary key, discuss any disadvantages of using email as a primary key.
-Answer: Since emails cannot be the exact same for different individuals, email could uniquely identify customers as a primary key. However, email should not be used as a primary key, rather it should be used as a reference key. The disadvantages of using email as a primary identifiers are email strings can be very similar and mistyped often, security on email servers are not always secure, and people can use many emails. It would be best to use customer's addresses or phone numbers because there is less room for mistakes. 
+Answer: Since emails cannot be the exact same for different individuals, email could uniquely identify customers as a primary key. However, email should not be used as a primary key, rather it should be used as a natural, or reference key. The disadvantages of using email as a primary identifiers are email strings can be very similar and mistyped often, security on email servers are not always secure, and people can use many emails. It would be best to use customer's addresses or phone numbers because there is less room for mistakes. 
 
 ####9. Given two relations S and R below find the Cartsian Product S x R. 
 Answer: 
