@@ -23,13 +23,15 @@ Answer: An example of a relation is a clothing store inventory table with many f
 ####7. Create a relational data model for *orders*.  Consider applying normalization rules (discuss Monday)
 Answer: 
 
-1NF:
+1NF: One large table
 
 ----
 | customer_id | first_name | last_name | zipcode | state | city | street | house_number | phone | email | order_id | items | quantity | price |
 
 
-2NF: 
+2NF: Few tables that are categorized by relationship.
+
+pk: customer_id, zipcode, order_id 
 
 --------------
 | customer_id |
@@ -55,6 +57,8 @@ Answer:
 
 3NF: 
 
+pk: customer_id
+fk: customer_info, zipcode, order_id 
 -----------
 | customer_id |
 |-------|
