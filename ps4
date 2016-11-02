@@ -120,9 +120,10 @@ Answer:
 7. Use SQL DML to INSERT records into Customers and Orders (and OrderItems).  
 Answer:
 
-INSERT INTO Customers (customer_id, first_name, last_name, address1, address2, customer_zipcode) VALUES ("1234", "Jen", "Lutes", "11 Hills Beach Rd", "PO Box 1", "04005");
-INSERT INTO Orders (order_id, customer_id, item_id, date) VALUES ("432", "1234", "12", "10March2016");
-INSERT INTO OrderItem (item_id, item_description, item_cost, item_title) VALUES ("12", "description", "12.05", "pants");
+INSERT INTO unemath_Lutes.Customers
+()
+VALUES 
+();
 
 8. Find all customer orders.
 
