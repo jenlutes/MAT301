@@ -108,15 +108,20 @@ ENGINE = InnoDB;
 
 2. Why do we need an OrderItems table?
 Answer: 
+An OrderItems table 
 
 3. Create linked tables in MS Access.
-
+Answer: 
+N/A
 4. Create forms to enter customer data.
-
+Answer: 
+N/A
 5. Create a form with a subform to enter orders and order item.
-
+Answer: 
+N/A
 6. Use forms created in 4 and 5 to insert Customers and Orders.  Add customers that have not made any orders. Make the number of entries relatively small.  Why?  
-
+Answer: 
+N/A
 7. Use SQL DML to INSERT records into Customers and Orders (and OrderItems).  
 Answer:
 
