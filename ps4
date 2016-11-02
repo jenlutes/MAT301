@@ -2,25 +2,13 @@
 
 1. Create three tables: Customers, Orders, and OrderItems.
 Answer:
-
-SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
-SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
-SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
+CREATE SCHEMA IF NOT EXISTS `unemath_Lutes` DEFAULT CHARACTER SET utf8 ;
+USE `unemath_Lutes` ;
 
 -- -----------------------------------------------------
--- Schema mydb
+-- Table `unemath_Lutes`.`Customers`
 -- -----------------------------------------------------
-
--- -----------------------------------------------------
--- Schema mydb
--- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8 ;
-USE `mydb` ;
-
--- -----------------------------------------------------
--- Table `mydb`.`Customers`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Customers` (
+CREATE TABLE IF NOT EXISTS `unemath_Lutes`.`Customers` (
   `customer_id` INT NOT NULL AUTO_INCREMENT,
   `first_name` VARCHAR(45) NULL,
   `last_name` VARCHAR(45) NULL,
@@ -32,46 +20,94 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`OrderItems`
+-- Table `unemath_Lutes`.`Orders`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`OrderItems` (
-  `item_id` INT NOT NULL AUTO_INCREMENT,
-  `item_description` VARCHAR(45) NULL,
-  `item_cost` DECIMAL(2) NULL,
-  PRIMARY KEY (`item_id`))
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `mydb`.`Orders`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Orders` (
-  `order_id` INT NOT NULL AUTO_INCREMENT,
+CREATE TABLE IF NOT EXISTS `unemath_Lutes`.`Orders` (
   `customer_id` INT NOT NULL,
-  `item_id` INT NOT NULL,
-  PRIMARY KEY (`order_id`),
+  `order_number` INT NOT NULL,
+  `purchase_date` VARCHAR(45) NULL,
+  `total` DECIMAL(2) NOT NULL,
   INDEX `customer_id_idx` (`customer_id` ASC),
-  INDEX `item_id _idx` (`item_id` ASC),
   CONSTRAINT `customer_id`
     FOREIGN KEY (`customer_id`)
-    REFERENCES `mydb`.`Customers` (`customer_id`)
-    ON DELETE CASCADE
-    ON UPDATE CASCADE,
-  CONSTRAINT `item_id `
-    FOREIGN KEY (`item_id`)
-    REFERENCES `mydb`.`OrderItems` (`item_id`)
+    REFERENCES `unemath_Lutes`.`Customers` (`customer_id`)
     ON DELETE CASCADE
     ON UPDATE CASCADE)
 ENGINE = InnoDB;
 
 
-SET SQL_MODE=@OLD_SQL_MODE;
-SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
-SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+-- -----------------------------------------------------
+-- Table `unemath_Lutes`.`Manufacturer`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `unemath_Lutes`.`Manufacturer` (
+  `Man_id` INT NOT NULL,
+  `Man_details` VARCHAR(45) NULL,
+  PRIMARY KEY (`Man_id`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `unemath_Lutes`.`Categories`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `unemath_Lutes`.`Categories` (
+  `cat_id` INT NOT NULL,
+  `cat_details` VARCHAR(45) NULL,
+  PRIMARY KEY (`cat_id`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `unemath_Lutes`.`Products`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `unemath_Lutes`.`Products` (
+  `product_id` INT NOT NULL,
+  `product_details` VARCHAR(45) NULL,
+  `man_id` INT NOT NULL,
+  `cat_id` INT NOT NULL,
+  PRIMARY KEY (`product_id`),
+  INDEX `cat_id_idx` (`cat_id` ASC),
+  INDEX `man_id_idx` (`man_id` ASC),
+  CONSTRAINT `man_id`
+    FOREIGN KEY (`man_id`)
+    REFERENCES `unemath_Lutes`.`Manufacturer` (`Man_id`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+  CONSTRAINT `cat_id`
+    FOREIGN KEY (`cat_id`)
+    REFERENCES `unemath_Lutes`.`Categories` (`cat_id`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `unemath_Lutes`.`OrderItems`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `unemath_Lutes`.`OrderItems` (
+  `item_description` VARCHAR(45) NULL,
+  `item_cost` DECIMAL(2) NULL,
+  `item_title` VARCHAR(45) NULL,
+  `product_id` INT NULL,
+  `quantity` INT NULL,
+  `order_number` INT NOT NULL,
+  `order_id` INT NOT NULL,
+  INDEX `product_id_idx` (`product_id` ASC),
+  PRIMARY KEY (`order_number`),
+  INDEX `order_id_idx` (`order_id` ASC),
+  CONSTRAINT `product_id`
+    FOREIGN KEY (`product_id`)
+    REFERENCES `unemath_Lutes`.`Products` (`product_id`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+  CONSTRAINT `order_id`
+    FOREIGN KEY (`order_id`)
+    REFERENCES `unemath_Lutes`.`Orders` (`customer_id`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE)
+ENGINE = InnoDB;
 
 2. Why do we need an OrderItems table?
 Answer: 
-We need an OrderItems table to connect items to an order. The there can be many items that influence the order. The OrderItems table contains information about the item's description and cost.
 
 3. Create linked tables in MS Access.
 
@@ -84,7 +120,9 @@ We need an OrderItems table to connect items to an order. The there can be many 
 7. Use SQL DML to INSERT records into Customers and Orders (and OrderItems).  
 Answer:
 
-INSERT INTO 
+INSERT INTO Customers (customer_id, first_name, last_name, address1, address2, customer_zipcode) VALUES ("1234", "Jen", "Lutes", "11 Hills Beach Rd", "PO Box 1", "04005");
+INSERT INTO Orders (order_id, customer_id, item_id, date) VALUES ("432", "1234", "12", "10March2016");
+INSERT INTO OrderItem (item_id, item_description, item_cost, item_title) VALUES ("12", "description", "12.05", "pants");
 
 8. Find all customer orders.
 
