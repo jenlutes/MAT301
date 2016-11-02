@@ -126,10 +126,45 @@ N/A
 Answer:
 
 INSERT INTO unemath_Lutes.Customers
-()
+(customer_id, first_name, last name, address1, address2,customer_zipcode)
+VALUES 
+('1234','Jen','Lutes','11 Hills Beach Rd','PO Box 1','04005'),
+('1235','Angel','Waters','11 Hills Beach Rd','PO Box 2','04005'),
+('1236','Emily','Murad','11 Hills Beach Rd','PO Box 3','04005'),
+('1237','Leah','Soloway','11 Hills Beach Rd','PO Box 4','04005'),
+('1238','Heather','Baron','11 Hills Beach Rd','PO Box 5','04005');
+
+INSERT INTO unemath_Lutes.Orders
+(customer_id, order_number, purchase_date, total)
 VALUES 
 ();
 
+INSERT INTO unemath_Lutes.OrderItems
+(item_description, item_cost, item_title, product_id,quantity, quantity,order_number,order_id)
+VALUES 
+();
+
+INSERT INTO unemath_Lutes.Categories
+(cat_id, cat_details)
+VALUES 
+('10','mickeymouse'),
+('11','minnymouse'),
+('12','donaldduck'),
+('13','goofy');
+
+
+INSERT INTO unemath_Lutes.Manufacturers
+(Man_id, Man_details)
+VALUES 
+('10','disney'),
+('11','pixar'),
+('12','teennick'),
+('13','nickelodeon');
+
+INSERT INTO unemath_Lutes.Products
+(product_id, product_details, man_id, cat_id)
+VALUES 
+();
 8. Find all customer orders.
 
 9. Select all customers that orders a certain product (This will depend on what data you entered into the table).  Find all customers that ordered product 3452.  
