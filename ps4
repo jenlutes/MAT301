@@ -108,7 +108,8 @@ ENGINE = InnoDB;
 
 2. Why do we need an OrderItems table?
 Answer: 
-An OrderItems table 
+An OrderItems table is the final table to display the order information vital to the purchase itself. All the other tables connect,
+but this one displays the specific order in terms of identification numbers of product and orders. 
 
 3. Create linked tables in MS Access.
 Answer: 
@@ -132,17 +133,23 @@ VALUES
 ('1235','Angel','Waters','11 Hills Beach Rd','PO Box 2','04005'),
 ('1236','Emily','Murad','11 Hills Beach Rd','PO Box 3','04005'),
 ('1237','Leah','Soloway','11 Hills Beach Rd','PO Box 4','04005'),
-('1238','Heather','Baron','11 Hills Beach Rd','PO Box 5','04005');
+
 
 INSERT INTO unemath_Lutes.Orders
 (customer_id, order_number, purchase_date, total)
 VALUES 
-();
+('1234', '100','ten_march', '15.00'),
+('1235', '101','ten_march', '10.00'),
+('1236', '102','ten_march', '17.00'),
+('1237', '103','ten_march', '20.00');
 
 INSERT INTO unemath_Lutes.OrderItems
 (item_description, item_cost, item_title, product_id,quantity, quantity,order_number,order_id)
 VALUES 
-();
+('doll','10.00','mickey_ doll','1','1','100','1'),
+('action_figure','5.00','minny_figure','2','1','101','2'),
+('stuffed_animal','12.00','stuffed_goofy','3','2','102','3'),
+('game','15.00','goofy_game','4','2','103','4');
 
 INSERT INTO unemath_Lutes.Categories
 (cat_id, cat_details)
@@ -151,7 +158,6 @@ VALUES
 ('11','minnymouse'),
 ('12','donaldduck'),
 ('13','goofy');
-
 
 INSERT INTO unemath_Lutes.Manufacturers
 (Man_id, Man_details)
@@ -164,9 +170,32 @@ VALUES
 INSERT INTO unemath_Lutes.Products
 (product_id, product_details, man_id, cat_id)
 VALUES 
-();
+('1','disney_mickey','10','10')
+('2','pixar_minny','11','11')
+('3','teennick_donald','13','13')
+('4','nickelodeon_goofy','13','13');
+
 8. Find all customer orders.
+Answer:
+SELECT * FROM unemath_Lutes.Orders;
 
-9. Select all customers that orders a certain product (This will depend on what data you entered into the table).  Find all customers that ordered product 3452.  
-
+9. Select all customers that orders a certain product (This will depend on what data you entered into the table).  Find all customers that ordered product 2.  
+Answer: 
+SELECT customer_id FROM unemath_Lutes.OrderItems WHERE product_id=2;
 10. List 5 questions that you can answer from this data.
+Answer: 
+
+How many categories are there? 
+SELECT * FROM unemath_Lutes.Categories;
+
+Who is customer 1236?
+SELECT * FROM unemath_Lutes.Customers WHERE customer_id=1236;
+
+What is the total cost for order number 101?
+SELECT total FROM unemath_Lutes.Orders WHERE order_number=101;
+
+Who manufactured the mickey mouse product?
+SELECT manufacturer_id FROM unemath_Lutes.Products WHERE product_details=disney_mickey;
+
+What is the theme of this relation?
+The theme is children store products. 
