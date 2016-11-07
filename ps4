@@ -198,4 +198,4 @@ Who manufactured the mickey mouse product?
 SELECT manufacturer_id FROM unemath_Lutes.Products WHERE product_details=disney_mickey;
 
 What is the theme of this relation?
-The theme is children store products. 
+The theme is children store products.  
