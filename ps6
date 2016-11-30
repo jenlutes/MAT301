@@ -11,7 +11,7 @@ True or False: You should use indexes on columns that have a high number of NULL
 Answer:false
 
 True or False: You should not use indexes on columns that are frequently manipulated.
-Answer:false 
+Answer:true
 
 True or False: You should never consider indexing a column used in a GROUP BY clause.
 Answer:false 
