@@ -20,10 +20,10 @@ What is a disadvantages of using indexes?
 Answer:A disadvantage of using indexes is that is makes more time and space to manipulate the database. Since indexes can be quite long, space and time can become a future problem. 
 
 Decide YES or NO whether an index should be used or not. a. Several columns in a small table b. Large table with a lot of data manipulation
-Answer:
+Answer:a. NO b. NO
 
 Determine which is most restrictive, products in categories 200 or 201 and products manufactured by manufacturer number 72.
-Answer:
+Answer: The where clause filters out the table for the desired query. The more restrictive clause is products manufactured by manufacturer number 72.
 
 Create a VIEW of all products from categories 200 or 201 manufactured by manufacturer 72 or 88.
 Answer:
